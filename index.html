@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three-Layer Metal-Gate VCAT | Sanghyeon Ju</title>
+  <meta name="description" content="TCAD design validation and process robustness analysis of a Three-Layer Metal-Gate VCAT">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Three-Layer Metal-Gate VCAT">
+  <meta property="og:description" content="TCAD Design Validation & Process Robustness Analysis">
+  <meta property="og:url" content="https://jujushmaterial.github.io/TLMG-VCAT-research-portfolio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="assets/css/project-v2.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-name" href="https://jujushmaterial.github.io/">Sanghyeon Ju</a>
+      <nav class="site-nav" aria-label="Portfolio navigation">
+        <a href="https://jujushmaterial.github.io/">HOME</a>
+        <a href="https://jujushmaterial.github.io/projects.html">PROJECTS</a>
+        <a href="https://github.com/jujushmaterial/TLMG-VCAT-research-portfolio">GITHUB</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-hero__inner">
+        <p class="eyebrow">TCAD · DRAM · SEMICONDUCTOR DEVICE</p>
+        <h1>Three-Layer Metal-Gate VCAT</h1>
+        <p class="hero-subtitle">TCAD Design Validation &amp; Process Robustness Analysis</p>
+        <p class="hero-summary">
+          Low–High–Low Three-Layer Work-Function Gate를 적용한 VCAT을 단계적으로 설계·검증하고,
+          gate segmentation boundary variation에 따른 성능 변화를 분석하여 nominal geometry와
+          device-level tolerance window를 정량화한 공동 TCAD 연구입니다.
+        </p>
+
+        <div class="project-meta" aria-label="Project metadata">
+          <div><span>Period</span><strong>2026.07.01–2026.10.01</strong></div>
+          <div><span>Status</span><strong class="status"><i></i>Competition Presented</strong></div>
+          <div><span>Tools</span><strong>Sentaurus Workbench · SDE · SDevice · SVisual · Python</strong></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button--dark" href="#overview">연구 내용 읽기</a>
+          <a class="button" href="https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research" target="_blank" rel="noopener">공동 연구 저장소</a>
+          <a class="button" href="https://github.com/jujushmaterial/TLMG-VCAT-research-portfolio" target="_blank" rel="noopener">Portfolio Repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-visual" aria-label="Project visual summary">
+      <div class="hero-visual__image">
+        <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-06/tasks/P06-T01/outputs/P06-T01-O04/submissions/20260819074743-minhosong-mse-FnVpuQ/files/P06-T01-O04_NOM_B1-35_B2-67_full.png" alt="Nominal Three-Layer Metal-Gate VCAT structure">
+      </div>
+      <div class="hero-visual__summary">
+        <h2>프로젝트 요약</h2>
+        <dl>
+          <div><dt>개요</dt><dd>Three-Layer WF VCAT의 단계적 설계 검증</dd></div>
+          <div><dt>목적</dt><dd>Nominal geometry 선정과 gate segmentation robustness 정량화</dd></div>
+          <div><dt>결과</dt><dd>Ti/TiN/Ti 15/32/13 nm nominal 및 device-level tolerance window 제안</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="project-layout">
+      <aside class="toc" aria-label="Page contents">
+        <p>Contents</p>
+        <a href="#overview">Overview</a>
+        <a href="#background">Background</a>
+        <a href="#method">Research Method</a>
+        <a href="#design">Design Analysis</a>
+        <a href="#validation">Validation</a>
+        <a href="#robustness">Robustness</a>
+        <a href="#proposal">Proposal</a>
+        <a href="#results">Results</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#records">Records</a>
+      </aside>
+
+      <article class="project-article">
+        <section id="overview">
+          <p class="section-label">01 · OVERVIEW</p>
+          <h2>프로젝트 개요</h2>
+          <p>
+            고집적 DRAM의 4F² 구조를 위한 vertical-channel access transistor(VCAT)를 대상으로,
+            선행 연구에서 제시된 Low–High–Low Three-Layer Work-Function Gate를 TCAD로 단계적으로 검증했습니다.
+            본 연구의 핵심은 구조 자체의 신규 제안보다, 실제 설계에서 사용할 수 있는 work-function 조합과
+            nominal geometry를 선정하고 gate segmentation variation에 대한 성능 허용 범위를 정량화하는 데 있습니다.
+          </p>
+          <blockquote>
+            <strong>Summary.</strong> This collaborative study validates a three-layer low–high–low work-function VCAT,
+            selects a balanced nominal geometry, checks 2D-to-3D consistency, and quantifies a device-level
+            gate-segmentation tolerance window.
+          </blockquote>
+          <div class="result-strip">
+            <div><span>Metal Stack</span><strong>Ti / TiN / Ti</strong></div>
+            <div><span>Work Function</span><strong>4.33 / 4.70 / 4.33 eV</strong></div>
+            <div><span>Nominal</span><strong>15 / 32 / 13 nm</strong></div>
+            <div><span>Variation</span><strong>46 geometries · 138 runs</strong></div>
+          </div>
+        </section>
+
+        <section id="background">
+          <p class="section-label">02 · BACKGROUND</p>
+          <h2>연구 배경</h2>
+          <p>
+            VCAT은 channel을 수직 방향으로 형성해 DRAM cell footprint 축소에 유리하지만,
+            높은 Ion과 낮은 Ioff, 작은 DIBL, 안정적인 subthreshold 특성, storage-node 측 GIDL 억제를
+            동시에 만족해야 하는 trade-off가 존재합니다. 위치에 따라 work function을 분리하는 multi-WF gate는
+            channel barrier와 junction electric field를 공간적으로 조절할 수 있는 설계 수단입니다.
+          </p>
+
+          <h3>문제 정의</h3>
+          <div class="question-grid">
+            <div><strong>01</strong><span>어떤 Low/High-WF 조합이 성능 균형에 적합한가?</span></div>
+            <div><strong>02</strong><span>세 금속 구간의 경계 위치를 어디에 둘 것인가?</span></div>
+            <div><strong>03</strong><span>Nominal geometry가 경계 변동에도 성능을 유지하는가?</span></div>
+            <div><strong>04</strong><span>2D axisymmetric 경향이 full-3D에서도 유지되는가?</span></div>
+          </div>
+
+          <h3>선행 연구 분석</h3>
+          <p>
+            선행 연구의 L-H-L 구조는 양단 Low-WF 영역으로 junction 부근 leakage를 낮추고,
+            중앙 High-WF 영역으로 channel electrostatics를 제어하는 개념을 제시합니다.
+            본 연구는 이 구조를 재제안하지 않고, 재료 조합·geometry·variation 관점에서 설계 검증 범위를 확장했습니다.
+          </p>
+        </section>
+
+        <section id="method">
+          <p class="section-label">03 · RESEARCH METHOD</p>
+          <h2>연구 방식 분석</h2>
+          <div class="workflow" aria-label="Research workflow">
+            <div><span>1</span><strong>Physical Feasibility</strong><small>Dual-WF preliminary validation</small></div>
+            <i>↓</i>
+            <div><span>2</span><strong>Baseline</strong><small>Single-Metal VCAT</small></div>
+            <i>↓</i>
+            <div><span>3</span><strong>WF Selection</strong><small>10 Low/High-WF pairs</small></div>
+            <i>↓</i>
+            <div><span>4</span><strong>Geometry</strong><small>49-point Xbnd1–Xbnd2 sweep</small></div>
+            <i>↓</i>
+            <div><span>5</span><strong>Validation</strong><small>2D axisymmetric ↔ full-3D</small></div>
+            <i>↓</i>
+            <div><span>6</span><strong>Robustness</strong><small>46 geometries · 138 runs</small></div>
+          </div>
+          <p class="note">
+            모든 변수를 한 번에 최적화하지 않고, 각 단계에서 하나의 설계 결정을 확정한 뒤 다음 단계의 입력으로 고정했습니다.
+          </p>
+        </section>
+
+        <section id="design">
+          <p class="section-label">04 · DESIGN ANALYSIS</p>
+          <h2>물리적 타당성 분석</h2>
+          <div class="image-pair">
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-01/tasks/P01-T09/outputs/P01-T09-O01/submissions/20260805121511-minhosong-mse-MFTCMg/files/P01-T09-O01_IdVg_8curves_log_replot.png" alt="Dual-WF transfer characteristics">
+              <figcaption>Dual-WF preliminary transfer characteristics.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-01/tasks/P01-T04/outputs/P01-T04-O01/submissions/20260805120831-minhosong-mse-s2wlxg/files/P01-T03-O01_supp_Vg1p0_LH-HL_HighLowVd_CBE_Cutline.png" alt="Dual-WF conduction-band comparison">
+              <figcaption>Work-function 배치에 따른 conduction-band 변화.</figcaption>
+            </figure>
+          </div>
+          <p>
+            Preliminary Dual-WF 시험 구조에서 WF 크기와 공간적 배치가 channel barrier와 carrier injection에
+            영향을 주는 방향을 확인했습니다. 이 단계는 이후 VCAT 결과와 조건이 다른 물리적 타당성 검증으로 사용했습니다.
+          </p>
+
+          <h2>기준 소자 분석</h2>
+          <div class="image-pair">
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T04/outputs/P02-T04-O03/submissions/20260730034242-minhosong-mse-oLORQw/files/P02-T04-O03_Doping_Xcut.png" alt="Single-Metal VCAT doping profile">
+              <figcaption>Single-Metal VCAT doping profile.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T06/outputs/P02-T06-O03/submissions/20260730034655-minhosong-mse-H--trQ/files/P02-T06-O03_IdVg_Log.png" alt="Single-Metal VCAT transfer characteristics">
+              <figcaption>TiN 4.70 eV baseline transfer characteristics.</figcaption>
+            </figure>
+          </div>
+          <p>TiN 4.70 eV Single-Metal VCAT을 이후 모든 개선율과 구조 비교의 baseline으로 고정했습니다.</p>
+
+          <h2>일함수 조합 분석</h2>
+          <div class="image-pair">
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-03/tasks/P03-T14/outputs/P03-T14-O03/submissions/20260813161506-minhosong-mse--cpOpA/files/P03-T14-O03_IdVg_Vd1p0.png" alt="Work-function pair transfer characteristics">
+              <figcaption>10개 Low/High-WF 조합의 transfer 특성 비교.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-03/tasks/P03-T14/outputs/P03-T14-O05/submissions/20260815150903-minhosong-mse-lugJsA/files/P03-T14-O05_ConductionBand_Cutline_Overlay_n72-n74.png" alt="Representative conduction-band comparison">
+              <figcaption>대표 후보의 conduction-band 비교.</figcaption>
+            </figure>
+          </div>
+          <p>
+            20/20/20 nm L-H-L 구조에서 10개 WF 조합을 비교하고 Ion, Ioff, DIBL, GIDL과 barrier 특성을 함께 검토해
+            <strong>Ti / TiN / Ti = 4.33 / 4.70 / 4.33 eV</strong>를 선정했습니다.
+          </p>
+
+          <h2>형상 최적화 분석</h2>
+          <div class="image-pair">
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-05/tasks/P05-T02/outputs/P05-T02-O04/submissions/20260819063550-minhosong-mse-DE8_dw/files/P05-T02-O04_DIBL_mVV_Map.png" alt="49-point DIBL map">
+              <figcaption>49-point Xbnd1–Xbnd2 DIBL map.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-05/tasks/P05-T02/outputs/P05-T02-O04/submissions/20260819063550-minhosong-mse-DE8_dw/files/P05-T02-O04_Log10_IonIoff_Map.png" alt="49-point Ion/Ioff map">
+              <figcaption>49-point Ion/Ioff map.</figcaption>
+            </figure>
+          </div>
+          <p>
+            Xbnd1과 Xbnd2를 2 nm 간격으로 변화시켜 총 49개 geometry를 비교했습니다. 중앙 High-WF 구간 M2가
+            지나치게 짧아질수록 Ioff와 DIBL이 빠르게 악화되는 경향을 확인했고, 단일 최고점이 아닌 다중 지표의 균형을 기준으로
+            <strong>Xbnd1/Xbnd2 = 35/67 nm</strong>, 즉 <strong>15/32/13 nm</strong>를 nominal로 선정했습니다.
+          </p>
+        </section>
+
+        <section id="validation">
+          <p class="section-label">05 · VALIDATION</p>
+          <h2>변수화 검증 분석</h2>
+          <div class="image-pair">
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-06/tasks/P06-T01/outputs/P06-T01-O04/submissions/20260819074743-minhosong-mse-FnVpuQ/files/P06-T01-O04_NOM_B1-35_B2-67_full.png" alt="Parameterized nominal geometry">
+              <figcaption>Nominal geometry.</figcaption>
+            </figure>
+            <figure>
+              <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-06/tasks/P06-T01/outputs/P06-T01-O04/submissions/20260819074743-minhosong-mse-FnVpuQ/files/P06-T01-O04_NOM_B1-35_B2-67_B1zoom_mesh.png" alt="Boundary mesh verification">
+              <figcaption>Boundary variation을 추종하는 local mesh.</figcaption>
+            </figure>
+          </div>
+          <p>Boundary 변화 시 구조·contact·local mesh가 의도대로 이동하는지 확인해 variation sweep의 기하학적 신뢰성을 점검했습니다.</p>
+
+          <h2>2D–3D 검증 분석</h2>
+          <p>
+            대규모 geometry sweep은 계산 효율을 위해 2D cylindrical axisymmetric model로 수행하고,
+            Single-Metal과 nominal TLMG를 full-3D로 추가 계산해 같은 metric의 개선 방향을 비교했습니다.
+          </p>
+          <p class="note">
+            아래 수치는 2D와 3D를 서로 직접 비교한 값이 아니라, 각각의 차원에서 확정된 Single-Metal Gate baseline을 대조군으로 두고
+            TLMG VCAT의 상대적인 성능 변화를 정리한 것입니다.
+          </p>
+          <div class="result-strip">
+            <div><span>2D DIBL</span><strong>−37.64%</strong></div>
+            <div><span>2D Ion</span><strong>+23.57%</strong></div>
+            <div><span>2D Ioff</span><strong>−70.40%</strong></div>
+            <div><span>2D Ion/Ioff</span><strong>+317.45%</strong></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Metric</th><th>2D</th><th>Full 3D</th></tr></thead>
+              <tbody>
+                <tr><td>DIBL</td><td>−37.64%</td><td>−38.97%</td></tr>
+                <tr><td>Ion</td><td>+23.57%</td><td>+22.97%</td></tr>
+                <tr><td>Ioff</td><td>−70.40%</td><td>−65.83%</td></tr>
+                <tr><td>Ion/Ioff</td><td>+317.45%</td><td>+259.85%</td></tr>
+                <tr><td>GIDL</td><td>−87.53%</td><td>Not simulated</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>민감도 분석</h2>
+          <figure>
+            <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-07/tasks/P07-T01/outputs/P07-T01-O03/submissions/20260821031243-minhosong-mse-zhautA/files/P07-T01-O03_Normalized_Sensitivity.png" alt="Normalized sensitivity around nominal">
+            <figcaption>Nominal 주변 Xbnd1/Xbnd2 normalized sensitivity.</figcaption>
+          </figure>
+          <p>국소 민감도와 boundary interaction을 확인한 뒤 tolerance study의 독립 변수를 Xbnd1과 Xbnd2로 유지했습니다.</p>
+        </section>
+
+        <section id="robustness">
+          <p class="section-label">06 · ROBUSTNESS</p>
+          <h2>공정 변동 분석</h2>
+          <figure class="figure-medium">
+            <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/LeeSeonHyeong/phases/phase-08/tasks/P08-T02/outputs/P08-T02-O06/submissions/20260822145120-LSH-linear-8U7ynw/files/P08-T02-O06_DIBL_Map.png" alt="DIBL map around nominal geometry">
+            <figcaption>Nominal 주변 1 nm 단위 geometry variation의 DIBL map.</figcaption>
+          </figure>
+          <p>
+            Nominal 35/67 nm 주변을 1 nm 단위로 세분화하여 총 46개 geometry를 평가했습니다.
+            각 geometry에서 Forward 0.05 V, Forward 1.0 V, GIDL 조건을 계산해 총 <strong>138회의 SDevice run</strong>을 수행했습니다.
+          </p>
+          <p>
+            일관된 악화 방향은 high-Xbnd1 / low-Xbnd2, 즉 중앙 High-WF M2가 짧아지는 방향이었습니다.
+            이 방향에서 DIBL과 Ioff가 증가하고 Ion/Ioff가 감소해 nominal 주변의 design margin이 비대칭적으로 형성됐습니다.
+          </p>
+          <p class="note">본 분석은 실제 wafer 통계나 공정 수율을 측정한 결과가 아니라 deterministic geometry grid 기반의 device-level variation study입니다.</p>
+        </section>
+
+        <section id="proposal">
+          <p class="section-label">07 · PROPOSAL</p>
+          <h2>성능 변화 허용 범위</h2>
+          <figure>
+            <img src="assets/figures/tolerance_performance_window.svg" alt="DIBL versus Ion/Ioff tolerance window">
+            <figcaption>Nominal-centered DIBL–Ion/Ioff performance tolerance window.</figcaption>
+          </figure>
+          <p>
+            46개 geometry를 DIBL–Ion/Ioff 성능 평면에 재배치하고 nominal TLMG를 중심으로
+            <strong>Core ±10%</strong>, <strong>Outer ±20%</strong> band를 정의했습니다.
+            Single-Metal baseline은 TLMG의 성능 우위를 확인하기 위한 비교 기준이며, tolerance band 자체는
+            nominal TLMG 대비 성능 변화량으로 정의했습니다.
+          </p>
+          <div class="result-strip">
+            <div><span>Core</span><strong>18 / 46</strong></div>
+            <div><span>Outer-inclusive</span><strong>29 / 46</strong></div>
+            <div><span>Outer Ratio</span><strong>63.0%</strong></div>
+            <div><span>Primary Plane</span><strong>DIBL · Ion/Ioff</strong></div>
+          </div>
+
+          <h2>GIDL 강건성 분석</h2>
+          <figure>
+            <img src="assets/figures/gidl_guard_validation.svg" alt="GIDL versus Ion/Ioff guard validation">
+            <figcaption>DIBL–Ion/Ioff classification을 유지한 GIDL leakage guard validation.</figcaption>
+          </figure>
+          <p>
+            동일한 46개 geometry를 GIDL–Ion/Ioff 평면에 다시 배치했습니다. 이는 새로운 tolerance window가 아니라,
+            앞서 정의한 허용 범위에서 GIDL suppression이 유지되는지를 확인하는 독립적인 leakage guard 검증입니다.
+            GIDL은 약 3.583×10⁻¹⁵–3.627×10⁻¹⁵ A의 좁은 범위에 분포했고, 최악 조건에서도
+            Single-Metal Gate보다 <strong>87.40% 이상 낮게 유지</strong>되었습니다.
+          </p>
+
+          <h2>형상 허용 범위</h2>
+          <p>
+            성능 평면의 통과점을 다시 Xbnd1–Xbnd2 공간에 대응시키고, 내부 모든 조합이 실제 계산되어 통과한
+            nominal 포함 최대 observed-grid rectangle을 대표 geometry window로 사용했습니다.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Window</th><th>Xbnd1</th><th>Xbnd2</th></tr></thead>
+              <tbody>
+                <tr><td>Core</td><td>33–35 nm</td><td>65–67 nm</td></tr>
+                <tr><td>Outer</td><td>33–36 nm</td><td>65–67 nm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <blockquote>
+            이 범위를 <strong>L-H-L Gate Segmentation Geometry Tolerance Window</strong>로 제안했습니다.
+          </blockquote>
+        </section>
+
+        <section id="results">
+          <p class="section-label">08 · RESULTS</p>
+          <h2>결과</h2>
+          <div class="result-summary">
+            <div><span>Metal Stack</span><strong>Ti / TiN / Ti</strong><small>4.33 / 4.70 / 4.33 eV</small></div>
+            <div><span>Nominal</span><strong>15 / 32 / 13 nm</strong><small>Xbnd1 / Xbnd2 = 35 / 67 nm</small></div>
+            <div><span>Core Window</span><strong>33–35 / 65–67 nm</strong><small>Xbnd1 / Xbnd2</small></div>
+            <div><span>Outer Window</span><strong>33–36 / 65–67 nm</strong><small>Xbnd1 / Xbnd2</small></div>
+          </div>
+          <p>
+            Nominal은 49-point sweep의 절대 최고점이 아니라 Single-Metal baseline 대비 주요 지표가 함께 개선되고,
+            이후 variation study의 기준으로 사용할 수 있는 balanced reference geometry입니다.
+          </p>
+        </section>
+
+        <section id="limitations">
+          <p class="section-label">09 · LIMITATIONS</p>
+          <h2>한계</h2>
+          <ol class="conclusion-list">
+            <li>Tolerance window는 2D axisymmetric model 기반입니다.</li>
+            <li>Geometry variation은 확률분포가 아닌 deterministic grid sweep입니다.</li>
+            <li>Core ±10% / Outer ±20%는 산업 표준 수율 기준이 아니라 nominal 대비 electrical deviation 기준입니다.</li>
+            <li>GIDL은 mesh에 민감하므로 동일 framework 내 상대 비교와 guard 판단에 사용했습니다.</li>
+            <li>Gate-oxide tunneling과 interface trap을 포함하지 않아 leakage-derived metric은 모델 범위 내 상대 지표입니다.</li>
+            <li>Full-3D tolerance sweep과 statistical process variation은 후속 연구 대상입니다.</li>
+          </ol>
+        </section>
+
+        <section id="records">
+          <p class="section-label">10 · RECORDS</p>
+          <h2>공동 연구 기록</h2>
+          <p>
+            본 프로젝트는 숭실대학교 학생 5인이 공동 수행했으며 최종 보고서에서는 모든 저자가 동등 기여로 표기되었습니다.
+            이 페이지는 공동 연구 전체를 개인 연구로 재표현하지 않고, 공개 가능한 핵심 결과와 연구 흐름을 포트폴리오 형식으로 정리한 것입니다.
+          </p>
+          <div class="resource-list">
+            <a href="https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research" target="_blank" rel="noopener"><strong>Collaborative Repository</strong><span>Phase별 연구 기록과 source of record</span></a>
+            <a href="https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/tree/main/members/JuSanghyeon" target="_blank" rel="noopener"><strong>My Research Records</strong><span>개인 작업 기록과 timeline</span></a>
+          </div>
+
+          <h2>발표 결과</h2>
+          <p>
+            본 연구는 2026 차세대반도체 경진대회에서 포스터 형식으로 발표되었습니다.
+            발표용 PPT와 발표 대본은 연구 흐름 정리와 포트폴리오 구성 참고자료로만 사용하며 본 저장소에는 공개하지 않습니다.
+          </p>
+
+          <h2>참고 문헌</h2>
+          <ol class="references">
+            <li>S.-Y. Lee, K.-N. Park, S. Kim, and J.-K. Han, “Three-layer work-function gate for suppressing floating-body effects on vertical-channel DRAM access transistors,” <em>Applied Physics Letters</em>, vol. 128, 123304, 2026.</li>
+            <li>D. Kong, H. Lee, J.-H. Lee, and J. Jeon, “Location-Selective Dual Work-Function Engineering for DRAM Vertical Cell Transistors,” <em>IEEE Electron Device Letters</em>, accepted 2026.</li>
+          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://jujushmaterial.github.io/">← Portfolio Home</a>
+    <a href="https://github.com/jujushmaterial/TLMG-VCAT-research-portfolio">GitHub Repository</a>
+    <span>Sanghyeon Ju © 2026</span>
+  </footer>
+</body>
+</html>
