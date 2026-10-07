@@ -385,7 +385,19 @@ Xbnd1 / Xbnd2
 
 ## 참고 문헌
 
-1. S.-Y. Lee, K.-N. Park, S. Kim, and J.-K. Han, “Three-layer work-function gate for suppressing floating-body effects on vertical-channel DRAM access transistors,” *Applied Physics Letters*, vol. 128, 123304, 2026.
-2. D. Kong, H. Lee, J.-H. Lee, and J. Jeon, “Location-Selective Dual Work-Function Engineering for DRAM Vertical Cell Transistors,” *IEEE Electron Device Letters*, accepted 2026.
+1. A. Spessot and H. Oh, "1T-1C dynamic random access memory status, challenges, and prospects," *IEEE Trans. Electron Devices*, vol. 67, no. 4, pp. 1382–1393, 2020.
+2. K. K. Min, S. Hwang, J.-H. Lee, and B.-G. Park, "Vertical inner gate transistors for 4F² DRAM cell," *IEEE Trans. Electron Devices*, vol. 67, no. 3, pp. 944–948, 2020.
+3. H. Liang et al., "Improved parasitic capacitance-predictively aware DTCO: Enhanced cell efficiency with manufacturability and scalability for 4F² VCT-based DRAM," *IEEE Trans. Electron Devices*, vol. 71, no. 7, pp. 4132–4137, 2024.
+4. D. Kim, S. Jung, M. Kim, Y. Choi, and J. Lee, "Dual-material-gate engineering for GIDL suppression and pillar aspect-ratio reduction in 4F² vertical DRAM cell transistors," *Nanotechnology*, vol. 37, 335201, 2026. doi:10.1088/1361-6528/ae9481
+5. A. Schenk, "Suppression of gate-induced drain leakage by optimization of junction profiles in 22 nm and 32 nm SOI nFETs," *Solid-State Electron.*, vol. 54, pp. 115–122, 2010. doi:10.1016/j.sse.2009.12.005
+6. S. Kim, Y. Seo, J. Lee, M. Kang, and H. Shin, "GIDL analysis of the process variation effect in gate-all-around nanowire FET," *Solid-State Electron.*, vol. 140, pp. 59–63, 2018. doi:10.1016/j.sse.2017.10.017
+7. S.-Y. Lee, K.-N. Park, S. Kim, and J.-K. Han, "Three-layer work-function gate for suppressing floating-body effects on vertical-channel DRAM access transistors," *Appl. Phys. Lett.*, vol. 128, 123304, 2026. doi:10.1063/5.0320207
+8. S. Xiong and J. Bokor, "Sensitivity of double-gate and FinFET devices to process variations," *IEEE Trans. Electron Devices*, vol. 50, no. 11, pp. 2255–2261, 2003. doi:10.1109/TED.2003.818594
+9. H. R. Khan, D. Mamaluy, and D. Vasileska, "Simulation of the impact of process variation on the optimized 10-nm FinFET," *IEEE Trans. Electron Devices*, vol. 55, no. 8, pp. 2134–2141, 2008. doi:10.1109/TED.2008.925937
+10. M. Nawaz, S. Decker, L.-F. Giles, W. Molzer, and T. Schulz, "Evaluation of process parameter space of bulk FinFETs using 3D TCAD," *Microelectron. Eng.*, vol. 85, pp. 1529–1539, 2008. doi:10.1016/j.mee.2008.02.014
+11. M. Sun, H. W. Baac, and C. Shin, "Simulation study: The impact of structural variations on the characteristics of a buried-channel-array transistor (BCAT) in DRAM," *Micromachines*, vol. 13, 1476, 2022. doi:10.3390/mi13091476
+12. X. Zhang, D. Connelly, P. Zheng, H. Takeuchi, M. Hytha, R. J. Mears, and T.-J. King Liu, "Analysis of 7/8-nm bulk-Si FinFET technologies for 6T-SRAM scaling," *IEEE Trans. Electron Devices*, vol. 63, no. 4, pp. 1502–1507, 2016. doi:10.1109/TED.2016.2523885
+13. Y. Sun and V. Kursun, "N-type carbon-nanotube MOSFET device profile optimization for very large scale integration," *Trans. Electr. Electron. Mater.*, vol. 12, no. 2, pp. 43–50, 2011. doi:10.4313/TEEM.2011.12.2.43
+14. Y. Li and C.-H. Hwang, "DC baseband and high-frequency characteristics of a silicon nanowire field effect transistor circuit," *Semicond. Sci. Technol.*, vol. 24, 045004, 2009. doi:10.1088/0268-1242/24/4/045004
 
 세부 참고문헌과 연구별 인용 관계는 최종 연구 보고서 및 공동 연구 저장소를 기준으로 관리합니다.
