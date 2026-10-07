@@ -13,6 +13,7 @@
 | 변수화 검증 분석 | Phase 6 — nominal geometry / boundary mesh |
 | 민감도 분석 | Phase 7 — normalized boundary sensitivity |
 | 공정 변동 분석 | Phase 8 — geometry-variation DIBL map |
+| 제안 | Phase 8 primary 31 + supplemental 15 geometry data — DIBL–Ion/Ioff nominal-centered tolerance window (portfolio SVG replot) |
 
 ## Source repository
 
