@@ -366,20 +366,16 @@ Xbnd1 / Xbnd2
 
 ## 공동 연구 기록
 
-본 프로젝트는 숭실대학교 학생 5인이 공동 수행한 연구이며, 최종 보고서에서는 모든 저자가 동등 기여로 표기되었습니다. 이 포트폴리오는 공동 연구 전체를 개인 연구로 재표현하지 않고, 연구 흐름과 공개 가능한 핵심 결과를 포트폴리오 형식으로 재구성한 것입니다.
-
-세부 Phase 기록, 작업 이력과 공용 연구 자료는 공동 연구 저장소에서 확인할 수 있습니다.
+본 프로젝트는 숭실대학교 학생 5인이 공동 수행하였습니다. 저는 해당 프로젝트의 총 팀장으로서 아이디어 제안 및 연구 계획 확립, 데이터 분석 및 결과 제시를 맡았습니다. 아래 링크를 통해 팀의 작업 기록을 확인할 수 있습니다.
 
 - [Collaborative Research Repository](https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research)
-- [Ju Sanghyeon Research Records](https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/tree/main/members/JuSanghyeon)
+- [Research Workflow Sheet](https://jujushmaterial.github.io/VCAT-1T1C-DRAM-TCAD-Research/)
 
 ---
 
 ## 발표 결과
 
-본 연구는 2026 차세대반도체 경진대회에서 포스터 형식으로 발표되었습니다. 포스터는 연구 배경, 단계적 검증 workflow, nominal 구조 선정, 2D–3D 비교, tolerance window와 최종 설계 시사점을 요약합니다.
-
-발표용 PPT와 발표 대본은 연구 내용 정리와 포트폴리오 구성의 참고 자료로만 사용하며 본 저장소에는 공개하지 않습니다.
+본 연구는 2026 차세대반도체 경진대회에서 포스터 최종 발표를 진행하였습니다. 최종적으로 장려상을 수상했으며, 추가 후속 연구를 통해 연구를 발전시킬 예정입니다.
 
 ---
 
