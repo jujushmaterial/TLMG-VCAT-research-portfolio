@@ -70,9 +70,15 @@ Three-Layer WF VCAT의 기본 구조는 선행 연구의 L-H-L gate 개념을 �
 
 ## 연구 방식 분석
 
-<p align="center">
-  <img src="assets/figures/research_workflow.webp" width="900" alt="Six-step research workflow">
-</p>
+```mermaid
+flowchart TD
+    A[Dual-WF 예비 검증] --> B[Single-Metal VCAT 기준 소자]
+    B --> C[Low/High Work-Function 조합]
+    C --> D[Xbnd1-Xbnd2 형상 탐색]
+    D --> E[2D Axisymmetric-Full 3D 대조]
+    E --> F[Nominal 주변 형상 변동]
+    F --> G[Tolerance Window]
+```
 
 연구는 한 번에 모든 변수를 최적화하지 않고, 앞 단계의 결과를 다음 단계의 입력으로 고정하는 단계적 방식으로 구성했습니다.
 
@@ -102,8 +108,8 @@ Tolerance Window
 
 <table>
 <tr>
-<td width="50%"><img src="assets/figures/physical_feasibility_idvg.webp" alt="Dual-WF Id-Vg comparison"></td>
-<td width="50%"><img src="assets/figures/physical_feasibility_cbe.webp" alt="Dual-WF conduction band comparison"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-01/tasks/P01-T09/outputs/P01-T09-O01/submissions/20260805121511-minhosong-mse-MFTCMg/files/P01-T09-O01_IdVg_8curves_log_replot.png" alt="Dual-WF Id-Vg comparison"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-01/tasks/P01-T04/outputs/P01-T04-O01/submissions/20260805120831-minhosong-mse-s2wlxg/files/P01-T03-O01_supp_Vg1p0_LH-HL_HighLowVd_CBE_Cutline.png" alt="Dual-WF conduction band comparison"></td>
 </tr>
 </table>
 
@@ -121,8 +127,8 @@ High-WF가 증가할수록 channel barrier와 turn-on voltage가 증가하는 �
 
 <table>
 <tr>
-<td width="50%"><img src="assets/figures/baseline_doping_profile.webp" alt="Baseline VCAT doping profile"></td>
-<td width="50%"><img src="assets/figures/baseline_idvg.webp" alt="Baseline VCAT transfer characteristics"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T04/outputs/P02-T04-O03/submissions/20260730034242-minhosong-mse-oLORQw/files/P02-T04-O03_Doping_Xcut.png" alt="Baseline VCAT doping profile"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T06/outputs/P02-T06-O03/submissions/20260730034655-minhosong-mse-H--trQ/files/P02-T06-O03_IdVg_Log.png" alt="Baseline VCAT transfer characteristics"></td>
 </tr>
 </table>
 
@@ -147,18 +153,14 @@ Three-Layer 구조의 성능을 비교하기 위한 기준으로 **TiN 4.70 eV S
 
 <sub>Research record: Low/High-WF material screening</sub>
 
-<p align="center">
-  <img src="assets/figures/workfunction_pair_summary.webp" width="900" alt="Ten work-function pair performance comparison">
-</p>
-
 동일한 20/20/20 nm L-H-L geometry에서 Al, Ti, W, TiN, Mo 기반의 **10개 Low/High-WF 조합**을 비교했습니다. 구조·도핑·mesh·bias를 동일하게 유지하고 WF만 변화시켜 Ion, Ioff, DIBL, GIDL과 threshold 특성을 비교했습니다.
 
 단일 지표의 최댓값 또는 최솟값만으로 조합을 선택하지 않고 drive current, leakage와 electrostatic control의 균형을 기준으로 후보를 좁혔습니다.
 
 <table>
 <tr>
-<td width="55%"><img src="assets/figures/workfunction_pairs_idvg.webp" alt="Transfer characteristics of work-function pairs"></td>
-<td width="45%"><img src="assets/figures/workfunction_cbe_comparison.webp" alt="Conduction band comparison of representative work-function pairs"></td>
+<td width="55%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-03/tasks/P03-T14/outputs/P03-T14-O03/submissions/20260813161506-minhosong-mse--cpOpA/files/P03-T14-O03_IdVg_Vd1p0.png" alt="Transfer characteristics of work-function pairs"></td>
+<td width="45%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-03/tasks/P03-T14/outputs/P03-T14-O05/submissions/20260815150903-minhosong-mse-lugJsA/files/P03-T14-O05_ConductionBand_Cutline_Overlay_n72-n74.png" alt="Conduction band comparison of representative work-function pairs"></td>
 </tr>
 </table>
 
@@ -174,9 +176,12 @@ High = TiN인 대표 후보들을 대상으로 electric field, conduction-band e
 
 <sub>Research record: 49-point Xbnd1–Xbnd2 exploration</sub>
 
-<p align="center">
-  <img src="assets/figures/geometry_49point_maps.webp" width="900" alt="49-point geometry performance maps">
-</p>
+<table>
+<tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-05/tasks/P05-T02/outputs/P05-T02-O04/submissions/20260819063550-minhosong-mse-DE8_dw/files/P05-T02-O04_DIBL_mVV_Map.png" alt="49-point DIBL map"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-05/tasks/P05-T02/outputs/P05-T02-O04/submissions/20260819063550-minhosong-mse-DE8_dw/files/P05-T02-O04_Log10_IonIoff_Map.png" alt="49-point Ion/Ioff map"></td>
+</tr>
+</table>
 
 Work-function 조합을 고정한 뒤 두 gate boundary인 `Xbnd1`, `Xbnd2`를 각각 2 nm 간격으로 변화시켜 **7 × 7 = 49개 geometry**를 비교했습니다.
 
@@ -187,10 +192,6 @@ M1 = Xbnd1 - 20
 M2 = Xbnd2 - Xbnd1
 M3 = 80 - Xbnd2
 ```
-
-<p align="center">
-  <img src="assets/figures/high_wf_length_trend.webp" width="760" alt="Performance trend versus center high-work-function length">
-</p>
 
 가장 뚜렷한 경향은 두 boundary의 절대 위치보다 **중앙 High-WF 구간 M2의 길이**에서 나타났습니다. M2가 짧아질수록 Ion은 완만하게 증가했지만, 일정 길이 이하에서는 Ioff와 DIBL이 빠르게 악화되었습니다.
 
@@ -207,8 +208,8 @@ M3 = 80 - Xbnd2
 
 <table>
 <tr>
-<td width="50%"><img src="assets/figures/parameterization_geometry.webp" alt="Parameterized gate geometry verification"></td>
-<td width="50%"><img src="assets/figures/parameterization_mesh.webp" alt="Boundary-following mesh verification"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-06/tasks/P06-T01/outputs/P06-T01-O04/submissions/20260819074743-minhosong-mse-FnVpuQ/files/P06-T01-O04_NOM_B1-35_B2-67_full.png" alt="Parameterized nominal gate geometry"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-06/tasks/P06-T01/outputs/P06-T01-O04/submissions/20260819074743-minhosong-mse-FnVpuQ/files/P06-T01-O04_NOM_B1-35_B2-67_B1zoom_mesh.png" alt="Boundary-following mesh verification"></td>
 </tr>
 </table>
 
@@ -219,10 +220,6 @@ M3 = 80 - Xbnd2
 ---
 
 ## 2D–3D 검증 분석
-
-<p align="center">
-  <img src="assets/figures/2d_3d_validation.webp" width="840" alt="2D axisymmetric and full-3D comparison">
-</p>
 
 대규모 geometry sweep에는 계산 효율을 위해 2D cylindrical axisymmetric model을 사용했습니다. 이 모델의 적용 범위를 확인하기 위해 Single-Metal과 nominal TLMG 구조를 full-3D로 추가 계산하고 같은 지표를 비교했습니다.
 
@@ -247,7 +244,7 @@ Ion과 DIBL은 2D–3D 간 차이가 작았고, Ioff와 Ion/Ioff처럼 leakage�
 <sub>Research record: local boundary sensitivity</sub>
 
 <p align="center">
-  <img src="assets/figures/sensitivity_summary.webp" width="900" alt="Normalized sensitivity of Xbnd1 and Xbnd2">
+  <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-07/tasks/P07-T01/outputs/P07-T01-O03/submissions/20260821031243-minhosong-mse-zhautA/files/P07-T01-O03_Normalized_Sensitivity.png" width="900" alt="Normalized sensitivity of Xbnd1 and Xbnd2">
 </p>
 
 Nominal 주변에서 Xbnd1과 Xbnd2의 국소 변화가 각 metric에 미치는 영향을 비교했습니다. 단순한 one-at-a-time response뿐 아니라 conditional slope와 boundary interaction을 함께 확인하여 두 경계의 영향이 독립적이지 않을 수 있음을 검토했습니다.
@@ -261,7 +258,7 @@ Nominal 주변에서 Xbnd1과 Xbnd2의 국소 변화가 각 metric에 미치는 
 <sub>Research record: nominal-centered geometry variation</sub>
 
 <p align="center">
-  <img src="assets/figures/variation_46point_maps.webp" width="900" alt="Performance maps for 46 geometry variations">
+  <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/LeeSeonHyeong/phases/phase-08/tasks/P08-T02/outputs/P08-T02-O06/submissions/20260822145120-LSH-linear-8U7ynw/files/P08-T02-O06_DIBL_Map.png" width="760" alt="DIBL map for geometry variations">
 </p>
 
 Nominal `35/67 nm` 주변의 Xbnd1–Xbnd2 공간을 1 nm 단위로 세분화하여 총 **46개 geometry**를 평가했습니다. 각 geometry마다 Forward 0.05 V, Forward 1.0 V, GIDL 조건을 계산하여 총 **138회의 SDevice run**을 수행했습니다.
@@ -273,13 +270,6 @@ Nominal `35/67 nm` 주변의 Xbnd1–Xbnd2 공간을 1 nm 단위로 세분화하
 ---
 
 ## 제안
-
-<table>
-<tr>
-<td width="50%"><img src="assets/figures/tolerance_performance_plane.webp" alt="DIBL versus Ion/Ioff tolerance bands"></td>
-<td width="50%"><img src="assets/figures/tolerance_geometry_map.webp" alt="Tolerance band mapped to geometry space"></td>
-</tr>
-</table>
 
 Tolerance window는 새로운 최적점을 찾기 위한 기준이 아니라, 선정된 nominal과 비교해 어느 범위까지 유사한 electrical performance가 유지되는지를 평가하기 위해 정의했습니다.
 
@@ -304,10 +294,6 @@ Tolerance window는 새로운 최적점을 찾기 위한 기준이 아니라, �
 ---
 
 ## 누설 강건성 분석
-
-<p align="center">
-  <img src="assets/figures/gidl_robustness.webp" width="780" alt="GIDL distribution around the nominal geometry">
-</p>
 
 Tolerance classification은 DIBL과 Ion/Ioff를 중심으로 구성했지만, DIBL 안정성이 BTBT leakage 안정성을 자동으로 의미하지 않기 때문에 GIDL을 별도의 guard metric으로 확인했습니다.
 
@@ -376,10 +362,6 @@ Xbnd1 / Xbnd2
 ---
 
 ## 발표 결과
-
-<p align="center">
-  <img src="assets/poster/final_poster.webp" width="760" alt="2026 Next-Generation Semiconductor Competition poster">
-</p>
 
 본 연구는 2026 차세대반도체 경진대회에서 포스터 형식으로 발표되었습니다. 포스터는 연구 배경, 단계적 검증 workflow, nominal 구조 선정, 2D–3D 비교, tolerance window와 최종 설계 시사점을 요약합니다.
 
