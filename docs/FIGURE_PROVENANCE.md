@@ -14,6 +14,7 @@
 | 민감도 분석 | Phase 7 — normalized boundary sensitivity |
 | 공정 변동 분석 | Phase 8 — geometry-variation DIBL map |
 | 제안 | Phase 8 primary 31 + supplemental 15 geometry data — DIBL–Ion/Ioff nominal-centered tolerance window (portfolio SVG replot) |
+| GIDL 강건성 분석 | Same 46 Phase 8 geometries — GIDL–Ion/Ioff leakage guard validation, with Core/Outer classification inherited from the DIBL–Ion/Ioff tolerance window (portfolio SVG replot) |
 
 ## Source repository
 
