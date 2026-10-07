@@ -271,25 +271,35 @@ Nominal `35/67 nm` 주변의 Xbnd1–Xbnd2 공간을 1 nm 단위로 세분화하
 
 ## 제안
 
-Tolerance window는 새로운 최적점을 찾기 위한 기준이 아니라, 선정된 nominal과 비교해 어느 범위까지 유사한 electrical performance가 유지되는지를 평가하기 위해 정의했습니다.
+### 성능 변화 허용 범위
 
-주 평면은 `DIBL – Ion/Ioff`이며 nominal 대비 양방향 편차를 적용했습니다.
+<p align="center">
+  <img src="assets/figures/tolerance_performance_window.svg" width="900" alt="DIBL and Ion/Ioff performance-space tolerance window around the nominal TLMG VCAT">
+</p>
 
-- **Core:** DIBL과 Ion/Ioff 모두 nominal 대비 ±10%
-- **Outer:** DIBL과 Ion/Ioff 모두 nominal 대비 ±20%
+공정 변동 분석에서 계산한 46개 geometry를 단순히 Xbnd1–Xbnd2 좌표로만 비교하지 않고, 각 형상의 전기적 성능을 `DIBL – Ion/Ioff` 평면에 다시 배치했습니다. 이때 기준점은 Single-Metal Gate가 아니라 앞서 선정한 **nominal TLMG 15/32/13 nm**이며, nominal에서 성능이 어느 정도까지 변화해도 동일 설계의 안정적인 변동 범위로 볼 수 있는지를 평가했습니다.
+
+성능 변화에 대한 tolerance는 DIBL과 Ion/Ioff 두 지표를 동시에 적용했습니다.
+
+- **Core Stability Band:** DIBL과 Ion/Ioff가 모두 nominal 대비 ±10% 이내
+- **Outer Stability Band:** DIBL과 Ion/Ioff가 모두 nominal 대비 ±20% 이내
 - **Guard:** Ion ≥ Single-Metal, Ioff ≤ Single-Metal, GIDL ≤ Single-Metal
 - **Monitor:** SS < 75 mV/dec
 
-46개 geometry 중 **18개가 Core**, **29개가 Outer-inclusive** 조건을 만족했습니다. Outer-inclusive 비율은 46개 중 **63.0%**입니다.
+그래프의 파란 점은 실제 계산한 46개 TLMG geometry, 주황색 마름모는 nominal 구조, 검은 사각형은 Single-Metal Gate baseline입니다. Single-Metal baseline은 TLMG의 성능 우위를 확인하기 위한 비교 기준이며, Core와 Outer band 자체는 **Single-Metal 대비 개선율이 아니라 nominal TLMG 대비 성능 변화량**으로 정의했습니다.
 
-형상 공간에서는 단순한 min–max 범위가 아니라, 내부의 모든 조합이 실제 계산되고 통과한 nominal 포함 최대 사각형인 **observed-grid rectangle**을 대표 tolerance window로 사용했습니다.
+46개 geometry 중 **18개가 Core**, **29개가 Outer-inclusive** 조건을 만족했습니다. 즉 계산한 형상의 **63.0%**가 두 주요 성능지표에서 nominal 대비 ±20% 이내의 변화 범위에 포함되었습니다.
+
+### 형상 허용 범위
+
+성능 평면에서 통과한 점들을 다시 Xbnd1–Xbnd2 형상 공간으로 대응시켰습니다. 단순한 각 축의 최소–최대 범위는 두 boundary가 동시에 변했을 때 통과를 보장하지 않기 때문에, 내부의 모든 조합이 실제 계산되고 통과한 nominal 포함 최대 사각형인 **observed-grid rectangle**을 대표 tolerance window로 사용했습니다.
 
 | Window | Xbnd1 | Xbnd2 |
 |---|---:|---:|
 | Core | 33–35 nm | 65–67 nm |
 | Outer | 33–36 nm | 65–67 nm |
 
-이 범위를 **L-H-L Gate Segmentation Geometry Tolerance Window**로 정의했습니다.
+이 범위를 **L-H-L Gate Segmentation Geometry Tolerance Window**로 제안했습니다. 즉 본 연구의 tolerance window는 단순히 특정 geometry의 성능이 우수하다는 의미가 아니라, 선정된 nominal 구조가 gate segmentation 오차에 대해 어느 범위까지 성능을 유지하는지를 **성능 공간과 형상 공간의 두 단계로 정량화한 결과**입니다.
 
 ---
 
