@@ -290,6 +290,20 @@ Nominal `35/67 nm` 주변의 Xbnd1–Xbnd2 공간을 1 nm 단위로 세분화하
 
 46개 geometry 중 **18개가 Core**, **29개가 Outer-inclusive** 조건을 만족했습니다. 즉 계산한 형상의 **63.0%**가 두 주요 성능지표에서 nominal 대비 ±20% 이내의 변화 범위에 포함되었습니다.
 
+### GIDL 강건성 분석
+
+<p align="center">
+  <img src="assets/figures/gidl_guard_validation.svg" width="900" alt="GIDL versus Ion/Ioff guard validation for 46 TLMG geometries">
+</p>
+
+앞의 `DIBL – Ion/Ioff` 평면에서 정의한 Core / Outer / window-outside 분류를 그대로 유지한 상태에서, 동일한 46개 geometry를 `GIDL – Ion/Ioff` 평면에 다시 배치했습니다. 이 그래프의 목적은 새로운 tolerance window를 정의하는 것이 아니라, **DIBL과 Ion/Ioff를 기준으로 선정한 허용 범위에서 GIDL suppression도 함께 유지되는지 확인하는 독립적인 leakage guard 검증**입니다.
+
+그래프에서 Core-class와 Outer-class, 그리고 DIBL–Ion/Ioff window 밖의 점들은 Ion/Ioff 방향으로는 넓게 분포하지만, GIDL 축에서는 거의 같은 위치에 모여 있습니다. 46개 geometry의 GIDL은 약 `3.583×10⁻¹⁵–3.627×10⁻¹⁵ A`의 매우 좁은 범위에 분포했으며, 가장 불리한 형상에서도 Single-Metal Gate baseline보다 **87.40% 이상 낮은 GIDL**이 유지되었습니다.
+
+주황색 마름모는 nominal TLMG `15/32/13 nm`, 검은 사각형은 Single-Metal Gate baseline을 나타냅니다. Single-Metal baseline이 약 `2.88×10⁻¹⁴ A`에 위치하는 것과 비교하면, gate segmentation이 변하더라도 TLMG의 GIDL suppression 자체는 안정적으로 유지됨을 확인할 수 있습니다.
+
+따라서 본 variation 범위에서는 **GIDL이 tolerance window의 제한 지표로 작용하지 않았으며, 실제 허용 범위를 결정한 주요 지표는 DIBL과 Ion/Ioff**였습니다.
+
 ### 형상 허용 범위
 
 성능 평면에서 통과한 점들을 다시 Xbnd1–Xbnd2 형상 공간으로 대응시켰습니다. 단순한 각 축의 최소–최대 범위는 두 boundary가 동시에 변했을 때 통과를 보장하지 않기 때문에, 내부의 모든 조합이 실제 계산되고 통과한 nominal 포함 최대 사각형인 **observed-grid rectangle**을 대표 tolerance window로 사용했습니다.
@@ -300,16 +314,6 @@ Nominal `35/67 nm` 주변의 Xbnd1–Xbnd2 공간을 1 nm 단위로 세분화하
 | Outer | 33–36 nm | 65–67 nm |
 
 이 범위를 **L-H-L Gate Segmentation Geometry Tolerance Window**로 제안했습니다. 즉 본 연구의 tolerance window는 단순히 특정 geometry의 성능이 우수하다는 의미가 아니라, 선정된 nominal 구조가 gate segmentation 오차에 대해 어느 범위까지 성능을 유지하는지를 **성능 공간과 형상 공간의 두 단계로 정량화한 결과**입니다.
-
----
-
-## 누설 강건성 분석
-
-Tolerance classification은 DIBL과 Ion/Ioff를 중심으로 구성했지만, DIBL 안정성이 BTBT leakage 안정성을 자동으로 의미하지 않기 때문에 GIDL을 별도의 guard metric으로 확인했습니다.
-
-46개 geometry의 GIDL은 약 `3.583×10⁻¹⁵–3.627×10⁻¹⁵ A`의 좁은 범위에 분포했고, 가장 불리한 형상에서도 Single-Metal baseline보다 **87.40% 이상 낮게 유지**되었습니다.
-
-따라서 본 sweep 범위에서는 GIDL보다 DIBL과 Ion/Ioff가 tolerance window를 제한하는 주요 지표로 작용했습니다.
 
 ---
 
