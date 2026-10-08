@@ -1,14 +1,14 @@
 # Figure Provenance
 
-이 포트폴리오 저장소는 공동 연구의 상세 데이터와 이미지를 중복 저장하지 않고, 공개 가능한 대표 이미지를 공동 연구 저장소의 검증된 research records에서 직접 참조합니다.
+이 포트폴리오 저장소는 공동 연구의 상세 데이터를 중복 저장하지 않고 검증된 research records를 직접 참조합니다. 단, 포트폴리오 가독성을 위한 주석 figure와 최종 발표 포스터 등 일부 공개 이미지는 별도 보관합니다.
 
 ## Representative figures
 
 | Portfolio section | Collaborative research record |
 |---|---|
 | 물리적 타당성 분석 | Phase 1 — Dual-WF Id–Vg / CBE cutline |
-| 기준 소자 분석 | Phase 2 — baseline doping profile / Id–Vg |
-| 일함수 조합 분석 | Phase 3 — WF-pair Id–Vg / CBE comparison |
+| 기준 소자 분석 | Phase 2 — baseline doping profile / Id–Vg; SMG_annotated.png (user-supplied original PNG with external labels) |
+| 일함수 조합 분석 | Phase 3 — WF-pair Id–Vg / CBE comparison; TLMG_annotated.png (user-supplied original PNG with external labels) |
 | 형상 최적화 분석 | Phase 5 — 49-point DIBL / Ion-Ioff maps |
 | 변수화 검증 분석 | Phase 6 — nominal geometry / boundary mesh |
 | 민감도 분석 | Phase 7 — normalized boundary sensitivity |
