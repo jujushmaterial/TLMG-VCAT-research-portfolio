@@ -1,5 +1,9 @@
 # Three-Layer Metal-Gate VCAT
 
+<p align="center">
+  <img src="assets/figures/tlmg_vcat_research_cover.png" width="920" alt="TLMG VCAT Research — SMG to TLMG">
+</p>
+
 ## 프로젝트 개요 분석
 
 **TCAD-Based Design Validation and Process Robustness Analysis of a Vertical-Channel Transistor with a Three-Layer Metal Gate**
