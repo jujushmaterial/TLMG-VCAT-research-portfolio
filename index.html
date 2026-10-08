@@ -34,9 +34,8 @@
         <h1>Three-Layer Metal-Gate VCAT</h1>
         <p class="hero-subtitle">TCAD Design Validation &amp; Process Robustness Analysis</p>
         <p class="hero-summary">
-          Low–High–Low Three-Layer Work-Function Gate를 적용한 VCAT을 단계적으로 설계·검증하고,
-          gate segmentation boundary variation에 따른 성능 변화를 분석하여 nominal geometry와
-          device-level tolerance window를 정량화한 공동 TCAD 연구입니다.
+          Gate 금속을 3개로 나눈 Low–High–Low TLMG를 적용한 VCAT을 단계적으로 설계·검증하고,
+          gate 공정 오차에 의한 tolerance window를 정량화한 TCAD 연구입니다.
         </p>
 
         <div class="project-meta" aria-label="Project metadata">
@@ -97,14 +96,14 @@
           <h2>프로젝트 개요</h2>
           <p>
             고집적 DRAM의 4F² 구조를 위한 vertical-channel access transistor(VCAT)를 대상으로,
-            선행 연구에서 제시된 Low–High–Low Three-Layer Work-Function Gate를 TCAD로 단계적으로 검증했습니다.
-            본 연구의 핵심은 구조 자체의 신규 제안보다, 실제 설계에서 사용할 수 있는 work-function 조합과
-            nominal geometry를 선정하고 gate segmentation variation에 대한 성능 허용 범위를 정량화하는 데 있습니다.
+            선행 연구 <a href="#ref-7">[7]</a>에서 제시된 Low–High–Low Three-Layer Work-Function Gate를 TCAD로 단계적으로 검증했습니다.
+            TLMG 구조의 성능 검증과 이론적 해석을 수행하고, 실제 공정에서의 적용 가능성을 보완하기 위해
+            gate segmentation variation에 대한 성능 허용 범위를 정량화하였습니다.
           </p>
           <blockquote>
-            <strong>Summary.</strong> This collaborative study validates a three-layer low–high–low work-function VCAT,
-            selects a balanced nominal geometry, checks 2D-to-3D consistency, and quantifies a device-level
-            gate-segmentation tolerance window.
+            <strong>Summary.</strong> This TCAD study evaluates the performance and physical behavior of the
+            Low–High–Low three-layer metal-gate VCAT described in prior work [7] and quantifies
+            a gate-segmentation performance tolerance window to assess its practical applicability.
           </blockquote>
           <h3>SMG–TLMG 정량 성능 비교</h3>
           <div class="table-wrap">
@@ -138,22 +137,18 @@
             높은 Ion과 낮은 Ioff, 작은 DIBL, 안정적인 subthreshold 특성, storage-node 측 GIDL 억제를
             동시에 만족해야 하는 trade-off가 존재합니다. 위치에 따라 work function을 분리하는 multi-WF gate는
             channel barrier와 junction electric field를 공간적으로 조절할 수 있는 설계 수단입니다.
+            그러나 실제 VCAT gate 형성 공정에서는 세 금속 경계를 설계한 위치에 정확히 형성하기 어렵습니다.
+            관련 선행연구의 공정 변동 사례에서 참고한 약 2–5 nm 수준의 형상 편차를 고려하여,
+            이러한 변동에서도 TLMG VCAT의 성능이 얼마나 강건하게 유지되는지 평가하고
+            공정 tolerance window를 제시하고자 하였습니다.
           </p>
-
           <h3>문제 정의</h3>
           <div class="question-grid">
-            <div><strong>01</strong><span>어떤 Low/High-WF 조합이 성능 균형에 적합한가?</span></div>
-            <div><strong>02</strong><span>세 금속 구간의 경계 위치를 어디에 둘 것인가?</span></div>
-            <div><strong>03</strong><span>Nominal geometry가 경계 변동에도 성능을 유지하는가?</span></div>
-            <div><strong>04</strong><span>2D axisymmetric 경향이 full-3D에서도 유지되는가?</span></div>
+            <div><strong>01</strong><span>TLMG 성능 향상이 세 금속의 배치 조합에 의한 것이 맞는가?</span></div>
+            <div><strong>02</strong><span>TLMG 구조 채택 시 SMG 대비 어느 정도 성능이 향상되는가?</span></div>
+            <div><strong>03</strong><span>세 금속 gate 중 어떤 영역이 성능에 critical하게 작용하는가?</span></div>
+            <div><strong>04</strong><span>실제 공정 오차를 고려하여 TLMG VCAT의 성능 강건성이 유지되는가?</span></div>
           </div>
-
-          <h3>선행 연구 분석</h3>
-          <p>
-            선행 연구의 L-H-L 구조는 양단 Low-WF 영역으로 junction 부근 leakage를 낮추고,
-            중앙 High-WF 영역으로 channel electrostatics를 제어하는 개념을 제시합니다.
-            본 연구는 이 구조를 재제안하지 않고, 재료 조합·geometry·variation 관점에서 설계 검증 범위를 확장했습니다.
-          </p>
         </section>
 
         <section id="method">
@@ -172,9 +167,6 @@
             <i>↓</i>
             <div><span>6</span><strong>Robustness</strong><small>46 geometries · 138 runs</small></div>
           </div>
-          <p class="note">
-            모든 변수를 한 번에 최적화하지 않고, 각 단계에서 하나의 설계 결정을 확정한 뒤 다음 단계의 입력으로 고정했습니다.
-          </p>
         </section>
 
         <section id="design">
@@ -191,8 +183,10 @@
             </figure>
           </div>
           <p>
-            Preliminary Dual-WF 시험 구조에서 WF 크기와 공간적 배치가 channel barrier와 carrier injection에
-            영향을 주는 방향을 확인했습니다. 이 단계는 이후 VCAT 결과와 조건이 다른 물리적 타당성 검증으로 사용했습니다.
+            TLMG의 물리적 타당성을 검증하기 위해 Planar Dual-WF MOSFET 시험 구조에서 WF 크기와 공간적 배치가
+            channel barrier와 carrier injection에 미치는 영향을 확인했습니다.
+            단순 금속 일함수의 평균값에 의한 영향인지, 실제 금속 배치에 의한 영향인지
+            계면 특성을 비교하여 정성·정량 분석하였습니다.
           </p>
 
           <h2>기준 소자 분석</h2>
@@ -206,7 +200,7 @@
               <figcaption>TiN 4.70 eV baseline transfer characteristics.</figcaption>
             </figure>
           </div>
-          <p>TiN 4.70 eV Single-Metal VCAT을 이후 모든 개선율과 구조 비교의 baseline으로 고정했습니다.</p>
+          <p>논문 benchmark를 기준으로 구현한 TiN 4.70 eV Single-Metal VCAT을 이후 모든 개선율과 구조 비교의 baseline으로 고정했습니다.</p>
 
           <h2>일함수 조합 분석</h2>
           <div class="image-pair">
@@ -225,6 +219,25 @@
           </p>
 
           <h2>형상 최적화 분석</h2>
+          <h3>형상 변수 정의</h3>
+          <p>Xbnd1과 Xbnd2는 x = 20–80 nm 게이트 영역에서 금속 구간을 나누는 경계 위치입니다.</p>
+          <div class="gate-boundary" role="group" aria-label="Gate segmentation boundary definition">
+            <div class="gate-boundary__heading">Gate region · x = 20–80 nm</div>
+            <div class="gate-boundary__bar" aria-hidden="true">
+              <div class="gate-boundary__segment gate-boundary__segment--outer" style="flex:15"><strong>M1</strong><small>Ti · 15 nm</small></div>
+              <div class="gate-boundary__segment gate-boundary__segment--center" style="flex:32"><strong>M2</strong><small>TiN · 32 nm</small></div>
+              <div class="gate-boundary__segment gate-boundary__segment--outer" style="flex:13"><strong>M3</strong><small>Ti · 13 nm</small></div>
+            </div>
+            <div class="gate-boundary__coordinates">
+              <span>x = 20 nm</span><span>Xbnd1 = 35 nm</span><span>Xbnd2 = 67 nm</span><span>x = 80 nm</span>
+            </div>
+            <div class="gate-boundary__formulas">
+              <div><span>Metal 1</span><strong>M1 = Xbnd1 − 20</strong></div>
+              <div><span>Metal 2</span><strong>M2 = Xbnd2 − Xbnd1</strong></div>
+              <div><span>Metal 3</span><strong>M3 = 80 − Xbnd2</strong></div>
+            </div>
+            <p class="gate-boundary__caption">단위: nm · 그림은 nominal 15/32/13 nm 기준</p>
+          </div>
           <div class="image-pair">
             <figure>
               <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-05/tasks/P05-T02/outputs/P05-T02-O04/submissions/20260819063550-minhosong-mse-DE8_dw/files/P05-T02-O04_DIBL_mVV_Map.png" alt="49-point DIBL map">
@@ -308,7 +321,6 @@
             일관된 악화 방향은 high-Xbnd1 / low-Xbnd2, 즉 중앙 High-WF M2가 짧아지는 방향이었습니다.
             이 방향에서 DIBL과 Ioff가 증가하고 Ion/Ioff가 감소해 nominal 주변의 design margin이 비대칭적으로 형성됐습니다.
           </p>
-          <p class="note">본 분석은 실제 wafer 통계나 공정 수율을 측정한 결과가 아니라 deterministic geometry grid 기반의 device-level variation study입니다.</p>
         </section>
 
         <section id="proposal">
@@ -358,7 +370,7 @@
             </table>
           </div>
           <blockquote>
-            이 범위를 <strong>L-H-L Gate Segmentation Geometry Tolerance Window</strong>로 제안했습니다.
+            해당 데이터를 통해 확인한 성능 허용 범위는 참고한 2–5 nm 수준의 공정 형상 편차 규모 내에 있습니다. 다만 2–5 nm의 모든 경계 오차가 이 허용 범위에 포함된다는 의미는 아닙니다.
           </blockquote>
         </section>
 
@@ -372,8 +384,7 @@
             <div><span>Outer Window</span><strong>33–36 / 65–67 nm</strong><small>Xbnd1 / Xbnd2</small></div>
           </div>
           <p>
-            Nominal은 49-point sweep의 절대 최고점이 아니라 Single-Metal baseline 대비 주요 지표가 함께 개선되고,
-            이후 variation study의 기준으로 사용할 수 있는 balanced reference geometry입니다.
+            2–5 nm 수준의 gate 형상 오차를 고려할 때, 본 연구에서 확인한 성능 허용 범위는 그중 일부 경계 편차에 대해 공정 강건성이 유지됨을 보여줍니다. 허용 범위 밖의 형상에서도 Ion과 누설 관련 지표 등에서 Single-Metal Gate 대비 개선이 관찰되었으며, GIDL은 평가한 46개 형상 모두에서 SMG보다 낮게 유지되었습니다. 이를 통해 TLMG가 성능상 이점과 게이트 분할 오차에 대한 강건성 확보 가능성을 지닌다는 점을 확인했습니다.
           </p>
         </section>
 
@@ -384,7 +395,7 @@
             <li>Tolerance window는 2D axisymmetric model 기반입니다.</li>
             <li>Geometry variation은 확률분포가 아닌 deterministic grid sweep입니다.</li>
             <li>Core ±10% / Outer ±20%는 산업 표준 수율 기준이 아니라 nominal 대비 electrical deviation 기준입니다.</li>
-            <li>GIDL은 mesh에 민감하므로 동일 framework 내 상대 비교와 guard 판단에 사용했습니다.</li>
+            <li>GIDL은 mesh에 민감하였기에 신뢰도가 감소할 수 있습니다.</li>
             <li>Gate-oxide tunneling과 interface trap을 포함하지 않아 leakage-derived metric은 모델 범위 내 상대 지표입니다.</li>
             <li>Full-3D tolerance sweep과 statistical process variation은 후속 연구 대상입니다.</li>
           </ol>
@@ -416,7 +427,7 @@
             <li>D. Kim, S. Jung, M. Kim, Y. Choi, and J. Lee, “Dual-material-gate engineering for GIDL suppression and pillar aspect-ratio reduction in 4F² vertical DRAM cell transistors,” <em>Nanotechnology</em>, vol. 37, 335201, 2026. doi:10.1088/1361-6528/ae9481</li>
             <li>A. Schenk, “Suppression of gate-induced drain leakage by optimization of junction profiles in 22 nm and 32 nm SOI nFETs,” <em>Solid-State Electron.</em>, vol. 54, pp. 115–122, 2010. doi:10.1016/j.sse.2009.12.005</li>
             <li>S. Kim, Y. Seo, J. Lee, M. Kang, and H. Shin, “GIDL analysis of the process variation effect in gate-all-around nanowire FET,” <em>Solid-State Electron.</em>, vol. 140, pp. 59–63, 2018. doi:10.1016/j.sse.2017.10.017</li>
-            <li>S.-Y. Lee, K.-N. Park, S. Kim, and J.-K. Han, “Three-layer work-function gate for suppressing floating-body effects on vertical-channel DRAM access transistors,” <em>Appl. Phys. Lett.</em>, vol. 128, 123304, 2026. doi:10.1063/5.0320207</li>
+            <li id="ref-7">S.-Y. Lee, K.-N. Park, S. Kim, and J.-K. Han, “Three-layer work-function gate for suppressing floating-body effects on vertical-channel DRAM access transistors,” <em>Appl. Phys. Lett.</em>, vol. 128, 123304, 2026. doi:10.1063/5.0320207</li>
             <li>S. Xiong and J. Bokor, “Sensitivity of double-gate and FinFET devices to process variations,” <em>IEEE Trans. Electron Devices</em>, vol. 50, no. 11, pp. 2255–2261, 2003. doi:10.1109/TED.2003.818594</li>
             <li>H. R. Khan, D. Mamaluy, and D. Vasileska, “Simulation of the impact of process variation on the optimized 10-nm FinFET,” <em>IEEE Trans. Electron Devices</em>, vol. 55, no. 8, pp. 2134–2141, 2008. doi:10.1109/TED.2008.925937</li>
             <li>M. Nawaz, S. Decker, L.-F. Giles, W. Molzer, and T. Schulz, “Evaluation of process parameter space of bulk FinFETs using 3D TCAD,” <em>Microelectron. Eng.</em>, vol. 85, pp. 1529–1539, 2008. doi:10.1016/j.mee.2008.02.014</li>
