@@ -13,8 +13,6 @@ This collaborative study uses Synopsys Sentaurus TCAD to validate a three-layer 
 
 ## SMG–TLMG 정량 성능 비교
 
-아래 값은 2D axisymmetric 기준으로, Phase 2에서 확정한 Single-Metal Gate(SMG) baseline과 최종 nominal TLMG 구조(15/32/13 nm)를 동일한 평가 지표로 비교한 결과입니다.
-
 | Metric | SMG baseline | TLMG nominal | 변화 |
 |---|---:|---:|---:|
 | Ion | 8.476 × 10⁻⁶ A | 1.047 × 10⁻⁵ A | +23.57% |
