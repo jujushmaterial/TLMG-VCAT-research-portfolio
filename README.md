@@ -11,6 +11,19 @@
 **Summary:**  
 This collaborative study uses Synopsys Sentaurus TCAD to validate a three-layer low–high–low work-function VCAT, select a balanced nominal geometry, compare 2D axisymmetric and full-3D results, and quantify a device-level gate-segmentation tolerance window around the nominal design.
 
+## SMG–TLMG 정량 성능 비교
+
+아래 값은 2D axisymmetric 기준으로, Phase 2에서 확정한 Single-Metal Gate(SMG) baseline과 최종 nominal TLMG 구조(15/32/13 nm)를 동일한 평가 지표로 비교한 결과입니다.
+
+| Metric | SMG baseline | TLMG nominal | 변화 |
+|---|---:|---:|---:|
+| Ion | 8.476 × 10⁻⁶ A | 1.047 × 10⁻⁵ A | +23.57% |
+| Ioff | 3.101 × 10⁻¹⁵ A | 9.180 × 10⁻¹⁶ A | −70.40% |
+| Ion/Ioff | 2.733 × 10⁹ | 1.141 × 10¹⁰ | +317.45% |
+| SS | 60.046 mV/dec | 60.028 mV/dec | −0.03% |
+| DIBL | 3.407 mV/V | 2.125 mV/V | −37.63% |
+| GIDL | 2.879 × 10⁻¹⁴ A | 3.590 × 10⁻¹⁵ A | −87.53% |
+
 | Item | Description |
 |---|---|
 | Device | Vertical-Channel Access Transistor (VCAT) for DRAM |
@@ -23,6 +36,7 @@ This collaborative study uses Synopsys Sentaurus TCAD to validate a three-layer 
 | Main metrics | DIBL, Ion, Ioff, Ion/Ioff, SS, GIDL |
 | Robustness study | 46 geometries, 138 SDevice runs |
 | Research type | Collaborative research |
+| Status | Done |
 
 > 상세 코드, Phase별 연구 기록과 원시 결과는 아래 공동 연구 저장소에서 확인할 수 있습니다.  
 > [VCAT-1T1C-DRAM-TCAD-Research](https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research)
