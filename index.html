@@ -41,7 +41,7 @@
 
         <div class="project-meta" aria-label="Project metadata">
           <div><span>Period</span><strong>2026.07.01–2026.10.01</strong></div>
-          <div><span>Status</span><strong class="status"><i></i>Competition Presented</strong></div>
+          <div><span>Status</span><strong class="status"><i></i>Done</strong></div>
           <div><span>Tools</span><strong>Sentaurus Workbench · SDE · SDevice · SVisual · Python</strong></div>
         </div>
 
@@ -106,6 +106,26 @@
             selects a balanced nominal geometry, checks 2D-to-3D consistency, and quantifies a device-level
             gate-segmentation tolerance window.
           </blockquote>
+          <h3>SMG–TLMG 정량 성능 비교</h3>
+          <p class="note">
+            아래 값은 2D axisymmetric 기준으로, Phase 2에서 확정한 Single-Metal Gate(SMG) baseline과
+            최종 nominal TLMG 구조(15/32/13 nm)를 동일한 평가 지표로 비교한 결과입니다.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Metric</th><th>SMG baseline</th><th>TLMG nominal</th><th>변화</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Ion</td><td>8.476 × 10<sup>−6</sup> A</td><td>1.047 × 10<sup>−5</sup> A</td><td>+23.57%</td></tr>
+                <tr><td>Ioff</td><td>3.101 × 10<sup>−15</sup> A</td><td>9.180 × 10<sup>−16</sup> A</td><td>−70.40%</td></tr>
+                <tr><td>Ion/Ioff</td><td>2.733 × 10<sup>9</sup></td><td>1.141 × 10<sup>10</sup></td><td>+317.45%</td></tr>
+                <tr><td>SS</td><td>60.046 mV/dec</td><td>60.028 mV/dec</td><td>−0.03%</td></tr>
+                <tr><td>DIBL</td><td>3.407 mV/V</td><td>2.125 mV/V</td><td>−37.63%</td></tr>
+                <tr><td>GIDL</td><td>2.879 × 10<sup>−14</sup> A</td><td>3.590 × 10<sup>−15</sup> A</td><td>−87.53%</td></tr>
+              </tbody>
+            </table>
+          </div>
           <div class="result-strip">
             <div><span>Metal Stack</span><strong>Ti / TiN / Ti</strong></div>
             <div><span>Work Function</span><strong>4.33 / 4.70 / 4.33 eV</strong></div>
