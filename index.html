@@ -190,6 +190,16 @@
           </p>
 
           <h2>기준 소자 분석</h2>
+          <p>
+            기준 구조는 TiN(4.70 eV)을 단일 게이트 금속으로 사용하는 Single-Metal Gate(SMG) VCAT입니다.
+            상단 Storage Node는 Drain, 하단 Bit Line은 Source이며, 중앙의 p형 실리콘 채널은 floating body로 동작합니다.
+          </p>
+          <figure class="annotated-device-figure">
+            <a href="assets/figures/SMG_annotated.png" target="_blank" rel="noopener" aria-label="SMG 구조 주석 원본 이미지 열기">
+              <img src="assets/figures/SMG_annotated.png" alt="SMG VCAT 원본 구조 이미지: 상단 Drain Storage Node, 중앙 TiN Gate와 Boron-doped p-Si Channel, 하단 Source Bit Line 위치와 Arsenic 도핑 주석" loading="lazy">
+            </a>
+            <figcaption>SMG 기준 구조 — TiN gate, Source/Drain contact, p형 채널 및 도핑 영역. 클릭 시 원본 크기로 확인할 수 있습니다.</figcaption>
+          </figure>
           <div class="image-pair">
             <figure>
               <img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T04/outputs/P02-T04-O03/submissions/20260730034242-minhosong-mse-oLORQw/files/P02-T04-O03_Doping_Xcut.png" alt="Single-Metal VCAT doping profile">
@@ -217,6 +227,12 @@
             20/20/20 nm L-H-L 구조에서 10개 WF 조합을 비교하고 Ion, Ioff, DIBL, GIDL과 barrier 특성을 함께 검토해
             <strong>Ti / TiN / Ti = 4.33 / 4.70 / 4.33 eV</strong>를 선정했습니다.
           </p>
+          <figure class="annotated-device-figure">
+            <a href="assets/figures/TLMG_annotated.png" target="_blank" rel="noopener" aria-label="TLMG 구조 주석 원본 이미지 열기">
+              <img src="assets/figures/TLMG_annotated.png" alt="TLMG VCAT 원본 구조 이미지: M1 Ti 4.33 eV, M2 TiN 4.70 eV, M3 Ti 4.33 eV, Drain Storage Node, Source Bit Line, Boron-doped p-Si Channel 주석" loading="lazy">
+            </a>
+            <figcaption>선정된 Low–High–Low 조합의 TLMG 구조와 M1/M2/M3 금속 구간. 조합 탐색은 20/20/20 nm에서 수행했으며, 그림은 금속 배치·도핑·전극의 이해를 위한 구조 주석입니다.</figcaption>
+          </figure>
 
           <h2>형상 최적화 분석</h2>
           <h3>형상 변수 정의</h3>
