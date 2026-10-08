@@ -117,6 +117,14 @@ TLMG의 물리적 타당성을 검증하기 위해 Planar Dual-WF MOSFET 시험 
 
 <sub>Research record: Single-Metal VCAT baseline</sub>
 
+SMG 기준 구조는 TiN(4.70 eV) 단일 금속 gate를 사용합니다. 상단 Storage Node는 Drain, 하단 Bit Line은 Source이며 중앙의 Boron 도핑 p형 채널은 floating body입니다.
+
+<p align="center">
+  <a href="assets/figures/SMG_annotated.png"><img src="assets/figures/SMG_annotated.png" width="900" alt="SMG VCAT gate, channel, contacts and doping labels"></a>
+</p>
+
+<sub>SMG 기준 소자 구조 — 라벨링한 원본 이미지. 클릭 시 확대</sub>
+
 <table>
 <tr>
 <td width="50%"><img src="https://raw.githubusercontent.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research/main/members/SongMinho/phases/phase-02/tasks/P02-T04/outputs/P02-T04-O03/submissions/20260730034242-minhosong-mse-oLORQw/files/P02-T04-O03_Doping_Xcut.png" alt="Baseline VCAT doping profile"></td>
@@ -161,6 +169,12 @@ High = TiN인 대표 후보들을 대상으로 electric field, conduction-band e
 **Ti / TiN / Ti = 4.33 / 4.70 / 4.33 eV**
 
 이 조합은 이후 모든 geometry 분석에서 고정된 material condition으로 사용했습니다.
+
+<p align="center">
+  <a href="assets/figures/TLMG_annotated.png"><img src="assets/figures/TLMG_annotated.png" width="900" alt="TLMG VCAT M1 Ti, M2 TiN, M3 Ti, channel and source-drain contacts labels"></a>
+</p>
+
+<sub>선정된 Low–High–Low 금속 배치의 구조 주석. 10개 WF 조합 탐색 시의 20/20/20 nm 형상과 이후 nominal 15/32/13 nm는 구분됩니다.</sub>
 
 ---
 
