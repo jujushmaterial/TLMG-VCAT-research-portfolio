@@ -365,8 +365,8 @@ Xbnd1 / Xbnd2
 본 연구는 2026 차세대반도체 경진대회에서 포스터 최종 발표를 진행하였습니다. 최종적으로 장려상을 수상했으며, 추가 후속 연구를 통해 연구를 발전시킬 예정입니다.
 
 <p align="center">
-  <a href="assets/figures/tlmg_vcat_final_poster.png">
-    <img src="assets/figures/tlmg_vcat_final_poster.png" width="600" alt="2026 차세대반도체 경진대회 차바니안 팀 TLMG VCAT 최종 포스터">
+  <a href="assets/figures/tlmg_vcat_final_poster.jpg">
+    <img src="assets/figures/tlmg_vcat_final_poster.jpg" width="600" alt="2026 차세대반도체 경진대회 차바니안 팀 TLMG VCAT 최종 포스터">
   </a>
 </p>
 
