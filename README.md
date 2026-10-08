@@ -34,7 +34,7 @@ This collaborative study uses Synopsys Sentaurus TCAD to validate a three-layer 
 | Main metrics | DIBL, Ion, Ioff, Ion/Ioff, SS, GIDL |
 | Robustness study | 46 geometries, 138 SDevice runs |
 | Research type | Collaborative research |
-| Status | Done |
+| Status | Completed |
 
 > 상세 코드, Phase별 연구 기록과 원시 결과는 아래 공동 연구 저장소에서 확인할 수 있습니다.  
 > [VCAT-1T1C-DRAM-TCAD-Research](https://github.com/jujushmaterial/VCAT-1T1C-DRAM-TCAD-Research)
